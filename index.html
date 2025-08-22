@@ -8,13 +8,12 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   <style>
-    * { margin:0; padding:0; box-sizing:border-box; font-family:'Cairo',sans-serif;}
-    body { line-height:1.6; background-color:#f0f2f5; color:#333; }
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Cairo',sans-serif; }
+    body { background-color:#b3d91; color:#fff; line-height:1.6; }
 
     /* رأس الموقع */
     header {
-      background-color:#0b3d91;
-      color:#ffd700;
+      background-color:#b3d91;
       padding:15px 20px;
       display:flex;
       align-items:center;
@@ -23,10 +22,10 @@
       top:0;
       z-index:1000;
     }
-    header .logo { display:flex; align-items:center; gap:10px; }
-    header .logo img { height:50px; border-radius:8px; }
-    header h1 { font-size:1.8em; color:#ffd700; }
-    header .menu-icon { font-size:1.8em; cursor:pointer; }
+    header .logo { display:flex; align-items:center; gap:15px; }
+    header .logo img { height:100px; width:auto; border-radius:5px; } /* شعار أكبر */
+    header h1 { font-size:2em; color:#fff; }
+    header .menu-icon { font-size:2em; cursor:pointer; color:#fff; }
 
     /* Sidebar */
     .sidebar {
@@ -66,56 +65,60 @@
       align-items:center;
       text-align:center;
       height:80vh;
-      background: url('https://source.unsplash.com/1600x900/?technology,office') no-repeat center center/cover;
-      color:#fff;
+      background-color:#b3d91; /* اللون الجديد */
       padding:0 20px;
       position:relative;
     }
-    .hero h1 { font-size:3em; margin-bottom:15px; text-shadow:2px 2px 8px rgba(0,0,0,0.6);}
-    .hero p { font-size:1.2em; max-width:700px; text-shadow:1px 1px 5px rgba(0,0,0,0.5); }
+    .hero h1 { font-size:3em; margin-bottom:15px; color:#fff; }
+    .hero p { font-size:1.2em; max-width:700px; color:#fff; margin-bottom:20px; }
     .hero button {
       margin-top:25px;
       padding:12px 25px;
       font-size:1em;
       border:none;
       border-radius:50px;
-      background-color:#ffd700;
-      color:#0b3d91;
+      background-color:#fff;
+      color:#b3d91;
+      font-weight:bold;
       cursor:pointer;
       transition:0.3s;
     }
-    .hero button:hover { background-color:#ffca00; }
+    .hero button:hover { background-color:#ffd700; color:#0b3d91; }
 
     section { padding:70px 20px; max-width:1200px; margin:auto; }
-    section h2 { text-align:center; margin-bottom:50px; font-size:2.5em; color:#0b3d91; }
+    section h2 { text-align:center; margin-bottom:50px; font-size:2.5em; color:#fff; }
 
     .features { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; }
     .feature {
-      background-color:#fff;
+      background-color:#0b3d91;
       padding:25px;
       border-radius:15px;
-      box-shadow:0 5px 15px rgba(0,0,0,0.1);
       text-align:center;
       transition: transform 0.3s, box-shadow 0.3s;
       cursor:pointer;
+      color:#fff;
+      border:2px solid #fff;
     }
     .feature:hover { transform:translateY(-10px); box-shadow:0 10px 25px rgba(0,0,0,0.2); }
 
-    /* Footer */
     footer {
       background-color:#0b3d91;
       color:#fff;
       text-align:center;
       padding:25px 20px;
     }
-    footer a { color:#ffd700; text-decoration:none; margin:0 8px; }
+    footer a { color:#fff; text-decoration:none; margin:0 8px; }
     .social-icons { margin-top:10px; }
-    .social-icons a { font-size:1.5em; margin:0 10px; transition:0.3s; }
-    .social-icons a:hover { color:#ffca00; }
+    .social-icons a { font-size:1.5em; margin:0 10px; transition:0.3s; color:#fff; }
+    .social-icons a:hover { color:#ffd700; }
+
+    input, textarea { width:100%; padding:12px; margin:10px 0; border-radius:10px; border:none; }
+    button { font-weight:bold; }
 
     @media(max-width:768px){
       .hero h1 { font-size:2.2em; }
       .hero p { font-size:1em; }
+      header .logo img { height:80px; }
     }
   </style>
 </head>
@@ -141,57 +144,41 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero" data-aos="fade-up">
+  <section class="hero">
     <h1>مرحبا بكم في يونس القيصر</h1>
     <p>نقدم أفضل الخدمات الرقمية، من رشّق متابعين، أرقام وهمية، وتصاميم احترافية بالذكاء الاصطناعي والأنيميشن والجرافيك.</p>
-    <button onclick="window.location.href='#contact'">اكتشف خدماتنا</button>
+    <button onclick="window.location.href='#services'">اكتشف خدماتنا</button>
   </section>
 
   <!-- Services -->
-  <section id="services" data-aos="fade-up">
+  <section id="services">
     <h2>خدماتنا</h2>
     <div class="features">
-      <div class="feature" onclick="location.href='service1.html'" data-aos="zoom-in">
+      <div class="feature" onclick="location.href='service1.html'">
         <h3>رشّق متابعين</h3>
         <p>زيادة متابعيك بطريقة احترافية لتعزيز حضورك على منصات التواصل الاجتماعي.</p>
       </div>
-      <div class="feature" onclick="location.href='service2.html'" data-aos="zoom-in" data-aos-delay="100">
+      <div class="feature" onclick="location.href='service2.html'">
         <h3>شراء أرقام وهمية</h3>
         <p>نوفر لك أرقام وهمية لمختلف الاستخدامات الرقمية بأمان وسرعة.</p>
       </div>
-      <div class="feature" onclick="location.href='service3.html'" data-aos="zoom-in" data-aos-delay="200">
+      <div class="feature" onclick="location.href='service3.html'">
         <h3>تصاميم جرافيك</h3>
         <p>تصاميم مبتكرة وجذابة تناسب كل احتياجات العلامة التجارية والمحتوى الرقمي.</p>
       </div>
-      <div class="feature" onclick="location.href='service4.html'" data-aos="zoom-in" data-aos-delay="300">
+      <div class="feature" onclick="location.href='service4.html'">
         <h3>تصاميم أنيميشن</h3>
         <p>حركات ورسوم متحركة احترافية لإبراز محتواك بطريقة جذابة ومرئية.</p>
       </div>
-      <div class="feature" onclick="location.href='service5.html'" data-aos="zoom-in" data-aos-delay="400">
+      <div class="feature" onclick="location.href='service5.html'">
         <h3>تصاميم بالذكاء الاصطناعي</h3>
         <p>تصاميم مبتكرة بالذكاء الاصطناعي لتوفير محتوى إبداعي سريع واحترافي.</p>
       </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact" data-aos="fade-left">
-    <h2>تواصل معنا</h2>
-    <div class="contact-form" data-aos="fade-up">
-      <input type="text" placeholder="اسمك" required>
-      <input type="email" placeholder="بريدك الإلكتروني" required>
-      <textarea rows="5" placeholder="رسالتك" required></textarea>
-      <button>إرسال الرسالة</button>
-    </div>
-    <p style="text-align:center; margin-top:20px;" data-aos="fade-up" data-aos-delay="100">
-      أو راسلنا مباشرة عبر: <br>
-      <a href="mailto:younesalkiser@gmail.com"><i class="fa fa-envelope"></i> younsealkiser@gmail.com</a><br>
-      <a href="https://wa.me/967779225741" target="_blank"><i class="fa fa-whatsapp"></i> واتساب</a><br>
-      <a href="https://www.instagram.com/yk.711" target="_blank"><i class="fab fa-instagram"></i> @yk.711</a>
-    </p>
-  </section>
-
-  <footer data-aos="fade-up">
+  <!-- Footer -->
+  <footer>
     <p>&copy; 2025 يونس القيصر - جميع الحقوق محفوظة</p>
     <div class="social-icons">
       <a href="mailto:younesalkiser@gmail.com"><i class="fa fa-envelope"></i></a>
@@ -200,9 +187,7 @@
     </div>
   </footer>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-    AOS.init({ duration:1000, once:true });
     function openSidebar() { document.getElementById("mySidebar").style.width = "250px"; }
     function closeSidebar() { document.getElementById("mySidebar").style.width = "0"; }
   </script>
