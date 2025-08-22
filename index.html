@@ -1,94 +1,339 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>يونس القيصر - التصميم والإعلان</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
-        rel="stylesheet">
+  <title>يونس القيصر - خدمات رقمية</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
   <style>
-    body, html {
+    * {
       margin: 0;
       padding: 0;
-      height: 100%;
-      overflow: hidden;
-      font-family: 'Poppins', sans-serif;
-      direction: rtl;
-      text-align: center;
-      color: #fff;
+      box-sizing: border-box;
+      font-family: 'Cairo', sans-serif;
     }
 
-    /* الخلفية */
+    body {
+      line-height: 1.6;
+      background-color: #f5f5f5;
+      color: #333;
+    }
+
+    header {
+      background-color: #1a73e8;
+      color: #fff;
+      padding: 20px 50px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    header nav h1 {
+      font-size: 1.8em;
+    }
+
+    header nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    header nav a:hover {
+      color: #ffeb3b;
+    }
+
     .hero {
-      position: relative;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(135deg, #0d1b2a 60%, #1b263b 95%);
-      background-size: cover;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      animation: fadeBackground 5s ease-in-out both;
-    }
-
-    @keyframes fadeBackground {
-      from { background-position: center; }
-      to { background-position: bottom; }
+      text-align: center;
+      height: 90vh;
+      background: url('https://source.unsplash.com/1600x900/?technology,office') no-repeat center center/cover;
+      color: #fff;
+      padding: 0 20px;
+      position: relative;
     }
 
     .hero h1 {
       font-size: 3em;
-      margin: 0;
-      animation: slideDown 1s ease-out both;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
     }
 
     .hero p {
-      font-size: 1.5em;
-      color: #ffd700;
-      margin: 10px 0 30px;
-      animation: slideDown 1.2s ease-out both;
+      font-size: 1.2em;
+      max-width: 600px;
+      text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
     }
 
-    @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-50px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .buttons a {
-      display: inline-block;
-      margin: 0 10px;
-      padding: 12px 28px;
-      background: linear-gradient(135deg, #ffd700, #cca300);
-      color: #0d1b2a;
-      text-decoration: none;
+    .hero button {
+      margin-top: 30px;
+      padding: 10px 25px;
       font-size: 1em;
-      font-weight: 600;
+      border: none;
+      border-radius: 5px;
+      background-color: #ffeb3b;
+      color: #333;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .hero button:hover {
+      background-color: #fdd835;
+    }
+
+    section {
+      padding: 80px 50px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    section h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 2.5em;
+      color: #1a73e8;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .feature {
+      background-color: #fff;
+      padding: 30px;
       border-radius: 10px;
-      transition: all 0.3s;
-      animation: popUp 1.5s ease-out both;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .buttons a:hover {
-      background: #e6b800;
-      color: #1b263b;
-      transform: translateY(-3px);
+    .feature:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
     }
 
-    @keyframes popUp {
-      from { opacity: 0; transform: scale(0.8); }
-      to { opacity: 1; transform: scale(1); }
+    /* نموذج التواصل */
+    .contact-form {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 10px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .contact-form input, 
+    .contact-form textarea {
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+    }
+
+    .contact-form button {
+      background-color: #1a73e8;
+      color: #fff;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1em;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .contact-form button:hover {
+      background-color: #155ab6;
+    }
+
+    footer {
+      background-color: #1a73e8;
+      color: #fff;
+      text-align: center;
+      padding: 30px 50px;
+    }
+
+    footer a {
+      color: #ffeb3b;
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .social-icons {
+      margin-top: 10px;
+    }
+
+    .social-icons a {
+      font-size: 1.5em;
+      margin: 0 10px;
+      transition: 0.3s;
+    }
+
+    .social-icons a:hover {
+      color: #fdd835;
+    }
+
+    /* أزرار CTA */
+    .cta-buttons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 999;
+    }
+
+    .cta-buttons a {
+      padding: 15px 20px;
+      border-radius: 50px;
+      color: #fff;
+      font-weight: bold;
+      text-decoration: none;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .cta-buttons a:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    }
+
+    .cta-service { background-color: #1a73e8; }
+    .cta-whatsapp { background-color: #25D366; }
+    .cta-instagram { background-color: #C13584; }
+
+    @media(max-width: 768px){
+      header nav {
+        flex-direction: column;
+      }
+
+      header nav a {
+        margin: 10px 0 0 0;
+      }
+
+      .cta-buttons {
+        bottom: 15px;
+        right: 15px;
+        gap: 10px;
+      }
+
+      .cta-buttons a {
+        padding: 12px 15px;
+        font-size: 0.9em;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="hero">
-    <h1>يونس القيصر</h1>
-    <p>حيث يتحول الإبداع إلى حقيقة</p>
-    <div class="buttons">
-      <a href="https://wa.me/967779225741" target="_blank">واتساب</a>
-      <a href="mailto:Younesalkiser@gmail.com">البريد الإلكتروني</a>
+
+  <header>
+    <nav>
+      <h1>يونس القيصر</h1>
+      <div>
+        <a href="#home">الرئيسية</a>
+        <a href="#services">خدماتنا</a>
+        <a href="#about">من نحن</a>
+        <a href="#contact">تواصل معنا</a>
+      </div>
+    </nav>
+  </header>
+
+  <section class="hero" id="home" data-aos="fade-up">
+    <h1>مرحبا بكم في يونس القيصر</h1>
+    <p>نقدم أفضل الخدمات الرقمية، من رشّق متابعين، أرقام وهمية، وتصاميم احترافية بالذكاء الاصطناعي والأنيميشن والجرافيك.</p>
+    <button onclick="window.location.href='#contact'">اكتشف خدماتنا</button>
+  </section>
+
+  <section id="services" data-aos="fade-up">
+    <h2>خدماتنا</h2>
+    <div class="features">
+      <div class="feature" data-aos="zoom-in">
+        <h3>رشّق متابعين</h3>
+        <p>زيادة متابعيك بطريقة احترافية لتعزيز حضورك على منصات التواصل الاجتماعي.</p>
+      </div>
+      <div class="feature" data-aos="zoom-in" data-aos-delay="100">
+        <h3>شراء أرقام وهمية</h3>
+        <p>نوفر لك أرقام وهمية لمختلف الاستخدامات الرقمية بأمان وسرعة.</p>
+      </div>
+      <div class="feature" data-aos="zoom-in" data-aos-delay="200">
+        <h3>تصاميم جرافيك</h3>
+        <p>تصاميم مبتكرة وجذابة تناسب كل احتياجات العلامة التجارية والمحتوى الرقمي.</p>
+      </div>
+      <div class="feature" data-aos="zoom-in" data-aos-delay="300">
+        <h3>تصاميم أنيميشن</h3>
+        <p>حركات ورسوم متحركة احترافية لإبراز محتواك بطريقة جذابة ومرئية.</p>
+      </div>
+      <div class="feature" data-aos="zoom-in" data-aos-delay="400">
+        <h3>تصاميم بالذكاء الاصطناعي</h3>
+        <p>تصاميم مبتكرة بالذكاء الاصطناعي لتوفير محتوى إبداعي سريع واحترافي.</p>
+      </div>
     </div>
+  </section>
+
+  <section id="about" data-aos="fade-right">
+    <h2>من نحن</h2>
+    <p style="text-align:center; max-width:800px; margin:auto;">
+      نحن فريق يونس القيصر، متخصصون في تقديم حلول رقمية متكاملة تساعدك على التميز في عالم الإنترنت، من تصميم وابتكار وحتى تسويق وزيادة التفاعل.
+    </p>
+  </section>
+
+  <section id="contact" data-aos="fade-left">
+    <h2>تواصل معنا</h2>
+    <div class="contact-form" data-aos="fade-up">
+      <input type="text" placeholder="اسمك" required>
+      <input type="email" placeholder="بريدك الإلكتروني" required>
+      <textarea rows="5" placeholder="رسالتك" required></textarea>
+      <button>إرسال الرسالة</button>
+    </div>
+    <p style="text-align:center; margin-top:20px;" data-aos="fade-up" data-aos-delay="100">
+      أو راسلنا مباشرة عبر: <br>
+      <a href="mailto:younesalkiser@gmail.com"><i class="fa fa-envelope"></i> younsealkiser@gmail.com</a><br>
+      <a href="https://wa.me/967779225741" target="_blank"><i class="fa fa-whatsapp"></i> واتساب</a><br>
+      <a href="https://www.instagram.com/yk.711" target="_blank"><i class="fab fa-instagram"></i> @yk.711</a>
+    </p>
+  </section>
+
+  <footer data-aos="fade-up">
+    <p>&copy; 2025 يونس القيصر - جميع الحقوق محفوظة</p>
+    <div class="social-icons">
+      <a href="mailto:younesalkiser@gmail.com"><i class="fa fa-envelope"></i></a>
+      <a href="https://wa.me/967779225741" target="_blank"><i class="fa fa-whatsapp"></i></a>
+      <a href="https://www.instagram.com/yk.711" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+  </footer>
+
+  <!-- أزرار CTA ثابتة -->
+  <div class="cta-buttons" data-aos="fade-left">
+    <a href="#contact" class="cta-service">طلب خدمة</a>
+    <a href="https://wa.me/967779225741" target="_blank" class="cta-whatsapp"><i class="fa fa-whatsapp"></i> واتساب</a>
+    <a href="https://www.instagram.com/yk.711" target="_blank" class="cta-instagram"><i class="fab fa-instagram"></i> إنستغرام</a>
   </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+  </script>
+
 </body>
 </html>
