@@ -10,11 +10,11 @@
   <style>
     * { margin:0; padding:0; box-sizing:border-box; font-family:'Cairo',sans-serif;}
     body { line-height:1.6; background-color:#f0f2f5; color:#333; }
-    
+
     /* رأس الموقع */
     header {
       background-color:#0b3d91;
-      color:#fff;
+      color:#ffd700;
       padding:15px 20px;
       display:flex;
       align-items:center;
@@ -24,7 +24,7 @@
       z-index:1000;
     }
     header .logo { display:flex; align-items:center; gap:10px; }
-    header .logo img { height:40px; }
+    header .logo img { height:50px; border-radius:8px; }
     header h1 { font-size:1.8em; color:#ffd700; }
     header .menu-icon { font-size:1.8em; cursor:pointer; }
 
@@ -87,11 +87,9 @@
     .hero button:hover { background-color:#ffca00; }
 
     section { padding:70px 20px; max-width:1200px; margin:auto; }
-
     section h2 { text-align:center; margin-bottom:50px; font-size:2.5em; color:#0b3d91; }
 
     .features { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:30px; }
-
     .feature {
       background-color:#fff;
       padding:25px;
@@ -101,10 +99,7 @@
       transition: transform 0.3s, box-shadow 0.3s;
       cursor:pointer;
     }
-    .feature:hover {
-      transform:translateY(-10px);
-      box-shadow:0 10px 25px rgba(0,0,0,0.2);
-    }
+    .feature:hover { transform:translateY(-10px); box-shadow:0 10px 25px rgba(0,0,0,0.2); }
 
     /* Footer */
     footer {
@@ -139,7 +134,7 @@
   <!-- Header -->
   <header>
     <div class="logo">
-      <img src="https://via.placeholder.com/50x50.png?text=YK" alt="شعار يونس القيصر">
+      <img src="https://i.ibb.co/84KLxhCW/logo.png" alt="شعار يونس القيصر">
       <h1>يونس القيصر</h1>
     </div>
     <span class="menu-icon" onclick="openSidebar()"><i class="fa fa-bars"></i></span>
@@ -208,10 +203,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
     AOS.init({ duration:1000, once:true });
-    
     function openSidebar() { document.getElementById("mySidebar").style.width = "250px"; }
     function closeSidebar() { document.getElementById("mySidebar").style.width = "0"; }
   </script>
-
 </body>
 </html>
