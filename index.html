@@ -1,225 +1,223 @@
 <!DOCTYPE html>
-<html lang="ar">
+<html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>يونس القيصر - خدمات رقمية</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>يونس القيصر - للخدمات الرقمية</title>
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
-    body { background-color: #b3d91; color: #fff; }
+    body {
+      margin:0;
+      font-family:'Cairo', sans-serif;
+      background-color:#0a1f44; /* أزرق غامق */
+      color:#fff; /* النصوص أبيض */
+    }
 
-    /* Header */
     header {
-      background: #b3d91;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 20px;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 20px;
+      background-color:#0a1f44;
+      color:#fff;
+      box-shadow:0 2px 6px rgba(0,0,0,0.3);
     }
-    header .logo {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-    }
+
     header .logo img {
-      height: 80px;
-      width: auto;
+      height:70px; /* ارتفاع مناسب */
+      width:auto;  /* الشعار بشكل عرضي */
     }
-    header h1 { font-size: 2em; color: #fff; }
+
     header .menu-icon {
-      font-size: 2em;
-      cursor: pointer;
-      color: #fff;
+      font-size:28px;
+      cursor:pointer;
     }
 
-    /* Sidebar */
+    /* القائمة الجانبية */
     .sidebar {
-      height: 100%;
-      width: 0;
-      position: fixed;
-      top: 0;
-      left: 0;
-      background-color: #b3d91;
-      overflow-x: hidden;
-      transition: width 0.5s;
-      padding-top: 60px;
-      z-index: 1500;
+      height:100%;
+      width:0;
+      position:fixed;
+      top:0;
+      right:0;
+      background-color:#0a1f44;
+      overflow-x:hidden;
+      transition:0.5s;
+      padding-top:60px;
+      z-index:1000;
     }
+
     .sidebar a {
-      display: block;
-      padding: 15px 30px;
-      text-decoration: none;
-      font-size: 1.2em;
-      color: #ffd700;
-      transition: opacity 0.3s;
+      padding:12px 24px;
+      text-decoration:none;
+      font-size:20px;
+      color:#ffd700;
+      display:block;
+      transition:0.3s;
     }
-    .sidebar a:hover { opacity: 0.8; }
+
+    .sidebar a:hover {
+      background-color:#ffd700;
+      color:#0a1f44;
+    }
+
     .sidebar .closebtn {
-      position: absolute;
-      top: 15px;
-      right: 25px;
-      font-size: 2em;
-      cursor: pointer;
-      color: #ffd700;
+      position:absolute;
+      top:20px;
+      left:20px;
+      font-size:36px;
+      margin-left:50px;
+      color:#fff;
     }
 
-    /* Hero */
+    /* القسم الرئيسي */
     .hero {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      min-height: 80vh;
-      text-align: center;
-      padding: 0 20px;
-    }
-    .hero h1 { font-size: 3em; margin-bottom: 15px; }
-    .hero p { font-size: 1.2em; max-width: 700px; margin-bottom: 20px; }
-    .hero button {
-      padding: 12px 25px;
-      font-size: 1em;
-      border: none;
-      border-radius: 50px;
-      background-color: #ffd700;
-      color: #b3d91;
-      font-weight: 700;
-      cursor: pointer;
-      transition: opacity 0.3s;
-    }
-    .hero button:hover { opacity: 0.8; }
-
-    /* Services */
-    section {
-      padding: 70px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-    section h2 { text-align: center; margin-bottom: 50px; font-size: 2.5em; }
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-    }
-    .feature {
-      background-color: #ffd700;
-      color: #b3d91;
-      padding: 25px;
-      border-radius: 15px;
-      text-align: center;
-      font-weight: 700;
-      cursor: pointer;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-    .feature:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      height:80vh;
+      color:#fff;
+      padding:0 20px;
     }
 
-    /* Footer */
+    .hero h1 {
+      font-size:40px;
+      margin-bottom:15px;
+    }
+
+    .hero p {
+      font-size:20px;
+      margin-bottom:20px;
+    }
+
+    .btn {
+      background-color:#ffd700;
+      color:#0a1f44;
+      border:none;
+      padding:12px 24px;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:bold;
+      transition:0.3s;
+    }
+
+    .btn:hover {
+      background-color:#e6c200;
+    }
+
+    /* الخدمات */
+    .services {
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+      gap:20px;
+      padding:40px 20px;
+    }
+
+    .services .card {
+      background-color:#ffd700;
+      color:#0a1f44;
+      border-radius:12px;
+      padding:20px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.3);
+      text-align:center;
+      transition:transform 0.3s;
+    }
+
+    .services .card:hover {
+      transform:translateY(-5px);
+    }
+
+    /* الفوتر */
     footer {
-      background-color: #b3d91;
-      text-align: center;
-      padding: 25px 20px;
+      background-color:#0a1f44;
+      color:#fff;
+      text-align:center;
+      padding:20px;
+      margin-top:30px;
     }
-    footer p { margin-bottom: 10px; }
-    .social-icons a {
-      color: #ffd700;
-      font-size: 1.5em;
-      margin: 0 10px;
-      transition: opacity 0.3s;
-    }
-    .social-icons a:hover { opacity: 0.8; }
 
-    /* Contact Form */
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      border-radius: 10px;
-      border: none;
-      background-color: #b3d91;
-      color: #fff;
+    footer a {
+      color:#ffd700;
+      text-decoration:none;
     }
-    input::placeholder, textarea::placeholder { color: #fff; }
 
-    @media (max-width: 768px) {
-      .hero h1 { font-size: 2.2em; }
-      .hero p { font-size: 1em; }
-      header .logo img { height: 60px; }
+    footer a:hover {
+      text-decoration:underline;
     }
   </style>
 </head>
 <body>
 
-  <!-- Sidebar -->
-  <div id="mySidebar" class="sidebar">
-    <span class="closebtn" onclick="closeSidebar()">&times;</span>
-    <a href="#services">خدماتنا</a>
-    <a href="#contact">تواصل معنا</a>
-  </div><!-- sidebar -->
-
-  <!-- Header -->
   <header>
     <div class="logo">
       <img src="https://i.ibb.co/84KLxhCW/logo.png" alt="شعار يونس القيصر">
-      <h1>يونس القيصر</h1>
     </div>
-    <span class="menu-icon" onclick="openSidebar()"><i class="fa fa-bars"></i></span>
+    <span class="menu-icon" onclick="openNav()">☰</span>
   </header>
 
-  <!-- Hero Section -->
+  <!-- القائمة الجانبية -->
+  <div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a href="#followers">رشق متابعين</a>
+    <a href="#numbers">شراء أرقام وهمية</a>
+    <a href="#graphic">تصاميم جرافيك</a>
+    <a href="#animation">تصاميم أنميشين</a>
+    <a href="#ai">تصاميم بالذكاء الاصطناعي</a>
+    <a href="#contact">تواصل معنا</a>
+  </div>
+
+  <!-- البانر -->
   <section class="hero">
-    <h1>مرحبا بكم في يونس القيصر</h1>
-    <p>نقدم أفضل الخدمات الرقمية: رشّق متابعين، أرقام وهمية، تصاميم جرافيك، أنيميشن، وتصاميم بالذكاء الاصطناعي.</p>
-    <button onclick="location.href='#services'">اكتشف خدماتنا</button>
+    <h1>مرحبًا بكم في يونس القيصر</h1>
+    <p>نقدم أفضل الخدمات الرقمية لتطوير أعمالك</p>
+    <a href="#services" class="btn">تعرف على خدماتنا</a>
   </section>
 
-  <!-- Services Section -->
-  <section id="services">
-    <h2>خدماتنا</h2>
-    <div class="features">
-      <div class="feature" onclick="location.href='service1.html'">رشّق متابعين</div>
-      <div class="feature" onclick="location.href='service2.html'">شراء أرقام وهمية</div>
-      <div class="feature" onclick="location.href='service3.html'">تصاميم جرافيك</div>
-      <div class="feature" onclick="location.href='service4.html'">تصاميم أنيميشن</div>
-      <div class="feature" onclick="location.href='service5.html'">تصاميم بالذكاء الاصطناعي</div>
+  <!-- الخدمات -->
+  <section id="services" class="services">
+    <div class="card" id="followers">
+      <h3>رشق متابعين</h3>
+      <p>زيادة متابعين إنستغرام بجودة عالية وسعر مناسب.</p>
+      <p><strong>السعر: يبدأ من 5$</strong></p>
+    </div>
+    <div class="card" id="numbers">
+      <h3>شراء أرقام وهمية</h3>
+      <p>أرقام للتفعيل السريع لجميع المنصات.</p>
+      <p><strong>السعر: يبدأ من 3$</strong></p>
+    </div>
+    <div class="card" id="graphic">
+      <h3>تصاميم جرافيك</h3>
+      <p>تصاميم احترافية للشركات والأفراد.</p>
+      <p><strong>السعر: يبدأ من 10$</strong></p>
+    </div>
+    <div class="card" id="animation">
+      <h3>تصاميم أنميشين</h3>
+      <p>موشن جرافيك وأنميشين بجودة عالية.</p>
+      <p><strong>السعر: يبدأ من 20$</strong></p>
+    </div>
+    <div class="card" id="ai">
+      <h3>تصاميم بالذكاء الاصطناعي</h3>
+      <p>أحدث التصاميم المولدة بالذكاء الاصطناعي.</p>
+      <p><strong>السعر: يبدأ من 15$</strong></p>
     </div>
   </section>
 
-  <!-- Contact Section -->
-  <section id="contact">
-    <h2>تواصل معنا</h2>
-    <form>
-      <input type="text" placeholder="اسمك" required>
-      <input type="email" placeholder="بريدك الإلكتروني" required>
-      <textarea rows="5" placeholder="رسالتك" required></textarea>
-      <button type="submit" style="background-color:#ffd700;color:#b3d91;">إرسال</button>
-    </form>
-    <div class="social-icons">
-      <a href="mailto:younesalkiser@gmail.com"><i class="fa fa-envelope"></i></a>
-      <a href="https://wa.me/967779225741"><i class="fa fa-whatsapp"></i></a>
-      <a href="https://www.instagram.com/yk.711"><i class="fab fa-instagram"></i></a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 يونس القيصر - جميع الحقوق محفوظة</p>
-    <div class="social-icons">
-      <a href="mailto:younesalkiser@gmail.com"><i class="fa fa-envelope"></i></a>
-      <a href="https://wa.me/967779225741"><i class="fa fa-whatsapp"></i></a>
-      <a href="https://www.instagram.com/yk.711"><i class="fab fa-instagram"></i></a>
-    </div>
+  <!-- تواصل -->
+  <footer id="contact">
+    <p>📞 779225741 | 📧 <a href="mailto:younesalkiser@gmail.com">younesalkiser@gmail.com</a></p>
+    <p>تابعنا على إنستغرام: <a href="https://instagram.com/yk.711" target="_blank">@yk.711</a></p>
+    <p>© 2025 جميع الحقوق محفوظة - يونس القيصر</p>
   </footer>
 
   <script>
-    function openSidebar() { document.getElementById('mySidebar').style.width = '250px'; }
-    function closeSidebar() { document.getElementById('mySidebar').style.width = '0'; }
+    function openNav() {
+      document.getElementById("mySidebar").style.width = "250px";
+    }
+    function closeNav() {
+      document.getElementById("mySidebar").style.width = "0";
+    }
   </script>
+
 </body>
 </html>
