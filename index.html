@@ -1,75 +1,56 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>يونس القيصر - للخدمات الرقمية</title>
+  <title>يونس القيصر للخدمات</title>
   <style>
     body {
       margin:0;
       font-family:'Cairo', sans-serif;
-      background-color:#0a1f44; /* أزرق غامق */
-      color:#fff; /* النصوص أبيض */
+      background-color:#0a1f44; /* الأزرق الغامق */
+      color:#fff;
     }
 
     header {
       display:flex;
       justify-content:space-between;
       align-items:center;
-      padding:15px 20px;
+      padding:15px 30px;
       background-color:#0a1f44;
       color:#fff;
-      box-shadow:0 2px 6px rgba(0,0,0,0.3);
     }
 
-    header .logo img {
-      height:70px; /* ارتفاع مناسب */
-      width:auto;  /* الشعار بشكل عرضي */
+    /* الشعار + الاسم */
+    .logo {
+      display:flex;
+      align-items:center;
+      gap:12px;
     }
 
-    header .menu-icon {
-      font-size:28px;
-      cursor:pointer;
+    .logo img {
+      height:70px;   /* شعار عريض */
+      width:auto;
     }
 
-    /* القائمة الجانبية */
-    .sidebar {
-      height:100%;
-      width:0;
-      position:fixed;
-      top:0;
-      right:0;
-      background-color:#0a1f44;
-      overflow-x:hidden;
-      transition:0.5s;
-      padding-top:60px;
-      z-index:1000;
+    .logo h1 {
+      font-size:24px;
+      margin:0;
+      font-weight:bold;
+      color:#ffd700; /* ذهبي */
     }
 
-    .sidebar a {
-      padding:12px 24px;
+    nav {
+      display:flex;
+      gap:15px;
+    }
+
+    nav a {
       text-decoration:none;
-      font-size:20px;
       color:#ffd700;
-      display:block;
-      transition:0.3s;
+      font-weight:bold;
     }
 
-    .sidebar a:hover {
-      background-color:#ffd700;
-      color:#0a1f44;
-    }
-
-    .sidebar .closebtn {
-      position:absolute;
-      top:20px;
-      left:20px;
-      font-size:36px;
-      margin-left:50px;
-      color:#fff;
-    }
-
-    /* القسم الرئيسي */
     .hero {
       display:flex;
       flex-direction:column;
@@ -77,147 +58,91 @@
       align-items:center;
       text-align:center;
       height:80vh;
+      background-color:#0a1f44;
       color:#fff;
       padding:0 20px;
     }
 
-    .hero h1 {
-      font-size:40px;
-      margin-bottom:15px;
-    }
-
-    .hero p {
-      font-size:20px;
-      margin-bottom:20px;
-    }
-
-    .btn {
-      background-color:#ffd700;
-      color:#0a1f44;
-      border:none;
-      padding:12px 24px;
-      border-radius:8px;
-      cursor:pointer;
-      font-weight:bold;
-      transition:0.3s;
-    }
-
-    .btn:hover {
-      background-color:#e6c200;
-    }
-
-    /* الخدمات */
     .services {
       display:grid;
       grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
       gap:20px;
-      padding:40px 20px;
+      padding:40px;
     }
 
-    .services .card {
-      background-color:#ffd700;
-      color:#0a1f44;
+    .card {
+      background-color:#ffd700; /* ذهبي */
+      color:#0a1f44; /* نصوص داخل الكارت */
       border-radius:12px;
       padding:20px;
       box-shadow:0 4px 10px rgba(0,0,0,0.3);
-      text-align:center;
-      transition:transform 0.3s;
+      transition:transform 0.3s ease;
     }
 
-    .services .card:hover {
+    .card:hover {
       transform:translateY(-5px);
     }
 
-    /* الفوتر */
+    button, .btn {
+      background-color:#ffd700;
+      color:#0a1f44;
+      border:none;
+      padding:10px 20px;
+      border-radius:8px;
+      cursor:pointer;
+      font-weight:bold;
+    }
+
     footer {
       background-color:#0a1f44;
-      color:#fff;
       text-align:center;
       padding:20px;
-      margin-top:30px;
+      color:#fff;
     }
 
-    footer a {
-      color:#ffd700;
+    .social a {
+      margin:0 10px;
       text-decoration:none;
-    }
-
-    footer a:hover {
-      text-decoration:underline;
+      color:#ffd700;
+      font-weight:bold;
     }
   </style>
 </head>
 <body>
-
   <header>
     <div class="logo">
-      <img src="https://i.ibb.co/84KLxhCW/logo.png" alt="شعار يونس القيصر">
+      <img src="https://i.ibb.co/84KLxhCW/yk-logo.png" alt="شعار يونس القيصر">
+      <h1>يونس القيصر</h1>
     </div>
-    <span class="menu-icon" onclick="openNav()">☰</span>
+    <nav>
+      <a href="#services">الخدمات</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
   </header>
 
-  <!-- القائمة الجانبية -->
-  <div id="mySidebar" class="sidebar">
-    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-    <a href="#followers">رشق متابعين</a>
-    <a href="#numbers">شراء أرقام وهمية</a>
-    <a href="#graphic">تصاميم جرافيك</a>
-    <a href="#animation">تصاميم أنميشين</a>
-    <a href="#ai">تصاميم بالذكاء الاصطناعي</a>
-    <a href="#contact">تواصل معنا</a>
-  </div>
-
-  <!-- البانر -->
   <section class="hero">
-    <h1>مرحبًا بكم في يونس القيصر</h1>
-    <p>نقدم أفضل الخدمات الرقمية لتطوير أعمالك</p>
-    <a href="#services" class="btn">تعرف على خدماتنا</a>
+    <h2>أهلاً بك في موقع يونس القيصر</h2>
+    <p>نقدم خدمات احترافية: رشق متابعين، شراء أرقام وهمية، تصاميم جرافيك، أنميشين، وتصاميم بالذكاء الاصطناعي</p>
+    <a href="#services" class="btn">استعرض خدماتنا</a>
   </section>
 
-  <!-- الخدمات -->
   <section id="services" class="services">
-    <div class="card" id="followers">
-      <h3>رشق متابعين</h3>
-      <p>زيادة متابعين إنستغرام بجودة عالية وسعر مناسب.</p>
-      <p><strong>السعر: يبدأ من 5$</strong></p>
-    </div>
-    <div class="card" id="numbers">
-      <h3>شراء أرقام وهمية</h3>
-      <p>أرقام للتفعيل السريع لجميع المنصات.</p>
-      <p><strong>السعر: يبدأ من 3$</strong></p>
-    </div>
-    <div class="card" id="graphic">
-      <h3>تصاميم جرافيك</h3>
-      <p>تصاميم احترافية للشركات والأفراد.</p>
-      <p><strong>السعر: يبدأ من 10$</strong></p>
-    </div>
-    <div class="card" id="animation">
-      <h3>تصاميم أنميشين</h3>
-      <p>موشن جرافيك وأنميشين بجودة عالية.</p>
-      <p><strong>السعر: يبدأ من 20$</strong></p>
-    </div>
-    <div class="card" id="ai">
-      <h3>تصاميم بالذكاء الاصطناعي</h3>
-      <p>أحدث التصاميم المولدة بالذكاء الاصطناعي.</p>
-      <p><strong>السعر: يبدأ من 15$</strong></p>
-    </div>
+    <div class="card">📈 رشق متابعين</div>
+    <div class="card">📱 شراء أرقام وهمية</div>
+    <div class="card">🎨 تصاميم جرافيك</div>
+    <div class="card">🎬 تصاميم أنميشين</div>
+    <div class="card">🤖 تصاميم بالذكاء الاصطناعي</div>
   </section>
 
-  <!-- تواصل -->
   <footer id="contact">
-    <p>📞 779225741 | 📧 <a href="mailto:younesalkiser@gmail.com">younesalkiser@gmail.com</a></p>
-    <p>تابعنا على إنستغرام: <a href="https://instagram.com/yk.711" target="_blank">@yk.711</a></p>
-    <p>© 2025 جميع الحقوق محفوظة - يونس القيصر</p>
+    <h3>تواصل معنا</h3>
+    <div class="social">
+      <a href="https://wa.me/967779225741">واتساب</a> |
+      <a href="https://instagram.com/yk.711">@yk.711</a> |
+      <a href="mailto:younesalkiser@gmail.com">إيميل</a> |
+      <span>📞 779225741</span>
+    </div>
+    <p>© 2025 جميع الحقوق محفوظة ليونس القيصر</p>
   </footer>
-
-  <script>
-    function openNav() {
-      document.getElementById("mySidebar").style.width = "250px";
-    }
-    function closeNav() {
-      document.getElementById("mySidebar").style.width = "0";
-    }
-  </script>
-
 </body>
 </html>
